@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+
+<mycat:schema xmlns:mycat="http://io.mycat/">  
+  <schema name="usr_dev" checkSQLschema="false" sqlMaxLimit="100"> 
+
+<table name="monitor" dataNode="dn1"/>    
+<table name="msisdn_section" dataNode="dn1"/>  
+<table name="register_user" dataNode="dn1"/>  
+<table name="sub_company_mapping" dataNode="dn1"/>  
+<table name="twouse_temp_user_incr" dataNode="dn1"/>  
+<table name="twouse_temp_user_incr_hw" dataNode="dn1"/>  
+<table name="uc_black_route_msisdn" rule="secuser-murmur-msisdn-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_black_rule" dataNode="dn1"/>
+<table name="uc_black_user" rule="secuser-murmur-blacklistid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_busi_log" dataNode="dn5"/>
+<table name="uc_cancel_route_device" rule="secuser-murmur-deviceid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_cancel_route_email" rule="secuser-murmur-email-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_cancel_route_msisdn" rule="secuser-murmur-msisdn-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_cancel_route_passid" rule="secuser-murmur-passid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_cancel_route_third_party" rule="secuser-murmur-openid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_cancel_route_username" rule="secuser-murmur-username-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_change_detail" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_error_log" rule="secuser-murmur-transactionid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_get_vote_detail" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_kafka_consume_log" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_login_detail" dataNode="dn1"/>  
+<table name="uc_login_error_userinfo" dataNode="dn1"/>
+<table name="uc_login_time" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_msisdn_section" dataNode="dn1"/>  
+<table name="uc_nickname_used" rule="sharding-by-nick_name_encrypt" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_partner_account" dataNode="dn1"/>
+<table name="uc_partner_account_temp" dataNode="dn1"/>  
+<table name="uc_praise" rule="sharding-by-praise_id" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_product" dataNode="dn1"/>  
+<table name="uc_product_temp" dataNode="dn1"/>  
+<table name="uc_reward_event_rule" dataNode="dn5"/>
+<table name="uc_reward_flow" dataNode="dn5"/>
+<table name="uc_reward_level" dataNode="dn5"/>
+<table name="uc_reward" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_reward_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_route_device_inaction" rule="secuser-murmur-deviceid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_device" rule="secuser-murmur-deviceid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_route_email_inaction" rule="secuser-murmur-email-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_email" rule="secuser-murmur-email-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_route_email_temp_add" rule="secuser-murmur-email-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_email_temp" rule="secuser-murmur-email-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_msisdn_inaction" rule="secuser-murmur-msisdn-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_msisdn" rule="secuser-murmur-msisdn-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_route_msisdn_temp_add" rule="secuser-murmur-msisdn-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_msisdn_temp" rule="secuser-murmur-msisdn-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_passid_inaction" rule="secuser-murmur-passid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_passid" rule="secuser-murmur-passid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_route_passid_temp_add" rule="secuser-murmur-passid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_passid_temp" rule="secuser-murmur-passid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_profileid_temp_add" rule="music-sharding-by-profile_id" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_route_profileid_temp" rule="sharding-by-profile_id" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_third_party_inaction" rule="secuser-murmur-openid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_third_party" rule="secuser-murmur-openid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_route_third_party_temp_add" rule="secuser-music-murmur-openid-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_route_third_party_temp" rule="secuser-murmur-openid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_username_inaction" rule="secuser-murmur-username-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_username" rule="secuser-murmur-username-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_username_temp_add" rule="secuser-murmur-username-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_route_username_temp" rule="secuser-murmur-username-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_static_code" dataNode="dn1"/>  
+<table name="uc_static_data" dataNode="dn1"/>  
+<table name="uc_third_account_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_third_account" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_third_account_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_third_account_temp" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_title" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_title_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_upgrade_wxaccount" dataNode="dn1,dn$5-6"/>
+<table name="uc_user_avatar_audit" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_avatar_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_user_avatar" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_avatar_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_avatar_temp" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_avatar_test" dataNode="dn2"/>  
+<table name="uc_user_background_audit" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_background_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_user_background" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_background_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_background_temp" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_ext_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_user_ext" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_ext_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_ext_temp" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_userId_move" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_user_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_user_nickname_audit" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_nickname_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_user_nickname" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_nickname_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_nickname_temp" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_signature_audit" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_signature_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_user_signature" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_signature_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_signature_temp" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_sync" dataNode="dn1"/>
+<table name="uc_user_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_user_temp_delete" dataNode="dn1"/>
+<table name="uc_user_temp" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>
+<table name="uc_vote_asset_count" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_vote_asset_count_temp" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+<table name="uc_vote_info" rule="secuser-murmur-userid-rule" dataNode="dn$1-2,dn$5-6"/>  
+
+<table name="uc_collection" rule="sharding-by-collection_id" dataNode="dn$1-2"/>
+<table name="uc_comment" rule="sharding-by-comment_id" dataNode="dn$1-2"/>
+<table name="uc_get_vote_detail_temp_add" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_get_vote_detail_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_get_vote_detail_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_login_time_temp_add" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_login_time_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_login_time_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_nickname_used_temp" rule="sharding-by-nick_name_encrypt" dataNode="dn$1-2"/>
+<table name="uc_product_temp_add" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_product_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_route_device_inaction_temp" rule="old-secuser-murmur-deviceid-rule" dataNode="dn$1-2"/>
+<table name="uc_route_device_temp_add" rule="old-secuser-murmur-deviceid-rule" dataNode="dn$1-2"/>
+<table name="uc_route_device_temp" rule="old-secuser-murmur-deviceid-rule" dataNode="dn$1-2"/>
+<table name="uc_route_email_inaction_temp" rule="old-secuser-murmur-email-rule" dataNode="dn$1-2"/>
+<table name="uc_route_msisdn_inaction_temp" rule="old-secuser-murmur-msisdn-rule" dataNode="dn$1-2"/>
+<table name="uc_route_passid_inaction_temp" rule="old-secuser-murmur-passid-rule" dataNode="dn$1-2"/>
+<table name="uc_route_third_party_inaction_temp" rule="old-secuser-murmur-openid-rule" dataNode="dn$1-2"/>
+<table name="uc_route_username_inaction_temp" rule="old-secuser-murmur-username-rule" dataNode="dn$1-2"/>
+<table name="uc_third_account_inaction_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_third_account_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_total_praise" rule="sharding-by-target_id" dataNode="dn$1-2"/>
+<table name="uc_user_avatar_audit_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_avatar_inaction_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_avatar_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_background_audit_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_background_inaction_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_background_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_ext_inaction_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_ext_temp_2" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_ext_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_inaction_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_nickname_audit_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_nickname_inaction_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_nickname_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_signature_audit_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_signature_inaction_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_signature_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_temp_2" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_user_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_vote_asset_count_temp_add" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_vote_asset_count_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_vote_info_temp_add" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_vote_info_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+<table name="uc_vote_info_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$1-2"/>
+
+
+  </schema> 
+
+<schema name="usr" checkSQLschema="false" sqlMaxLimit="100">
+<table name="msisdn_section"  dataNode="dn3"/>
+<table name="register_user"  dataNode="dn3"/>
+<table name="sub_company_mapping"  dataNode="dn3"/>
+<table name="twouse_temp_user_incr"  dataNode="dn3"/>
+<table name="twouse_temp_user_incr_hw"  dataNode="dn3"/>
+<table name="uc_black_route_msisdn" rule="secuser-murmur-msisdn-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_black_rule" dataNode="dn3"/>
+<table name="uc_black_user" rule="secuser-murmur-blacklistid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_busi_log" dataNode="dn3"/>
+<table name="uc_cancel_route_device" rule="secuser-murmur-deviceid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_cancel_route_email" rule="secuser-murmur-email-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_cancel_route_msisdn" rule="secuser-murmur-msisdn-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_cancel_route_passid" rule="secuser-murmur-passid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_cancel_route_third_party" rule="secuser-murmur-openid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_cancel_route_username" rule="secuser-murmur-username-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_change_detail" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_error_log" rule="secuser-murmur-transactionid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_get_vote_detail" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_kafka_consume_log" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_login_detail" dataNode="dn3"/>
+<table name="uc_login_error_userinfo" dataNode="dn3"/>
+<table name="uc_login_time" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>     
+<table name="uc_msisdn_section" dataNode="dn3"/>
+<table name="uc_nickname_used" rule="sharding-by-nick_name_encrypt" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_partner_account"  dataNode="dn3"/>
+<table name="uc_partner_account_temp" dataNode="dn3"/>
+<table name="uc_praise" rule="sharding-by-praise_id" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_product"  dataNode="dn3"/>
+<table name="uc_product_temp" dataNode="dn3"/>
+<table name="uc_reward_event_rule" dataNode="dn7"/>
+<table name="uc_reward_flow" dataNode="dn7"/>
+<table name="uc_reward_level" dataNode="dn7"/>
+<table name="uc_route_device_inaction" rule="secuser-murmur-deviceid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_route_device" rule="secuser-murmur-deviceid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_route_email_inaction" rule="secuser-murmur-email-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_route_email" rule="secuser-murmur-email-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_route_msisdn_inaction" rule="secuser-murmur-msisdn-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_route_msisdn" rule="secuser-murmur-msisdn-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_route_passid_inaction" rule="secuser-murmur-passid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_route_passid" rule="secuser-murmur-passid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_route_third_party_inaction" rule="secuser-murmur-openid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_route_third_party" rule="secuser-murmur-openid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_route_username_inaction" rule="secuser-murmur-username-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_route_username" rule="secuser-murmur-username-rule" dataNode="dn$3-4,dn$7-8"/>     
+<table name="uc_static_code"  dataNode="dn3"/>
+<table name="uc_static_data"  dataNode="dn3"/>
+<table name="uc_third_account_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_third_account" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_third_account_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_third_account_temp" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_upgrade_wxaccount" dataNode="dn3"/>
+<table name="uc_user_avatar_audit" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_avatar_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_avatar" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_avatar_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_avatar_temp" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_avatar_test" dataNode="dn3"/>     
+<table name="uc_user_background_audit" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_background_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_background" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_background_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_background_temp" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_ext_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_ext" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_ext_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_ext_temp" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_userId_move" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_nickname_audit" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_nickname_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_nickname" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_nickname_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_nickname_temp" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_signature_audit" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>     
+<table name="uc_user_signature_inaction" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_signature" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_signature_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_signature_temp" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_sync" dataNode="dn3"/>
+<table name="uc_user_temp_add" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_user_temp_delete" dataNode="dn7"/>
+<table name="uc_user_temp" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_vote_asset_count" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+<table name="uc_vote_info" rule="secuser-murmur-userid-rule" dataNode="dn$3-4,dn$7-8"/>
+
+<table name="uc_collection" rule="sharding-by-collection_id" dataNode="dn$3-4"/>
+<table name="uc_comment" rule="sharding-by-comment_id" dataNode="dn$3-4"/>
+<table name="uc_get_vote_detail_temp_add" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_get_vote_detail_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_get_vote_detail_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_login_time_temp_add" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_login_time_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_login_time_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>     
+<table name="uc_nickname_used_temp" rule="sharding-by-nick_name_encrypt" dataNode="dn$3-4"/>
+<table name="uc_product_temp_add" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_product_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>     
+<table name="uc_route_device_inaction_temp" rule="old-secuser-murmur-deviceid-rule" dataNode="dn$3-4"/>
+<table name="uc_route_email_inaction_temp" rule="old-secuser-murmur-email-rule" dataNode="dn$3-4"/>
+<table name="uc_route_msisdn_inaction_temp" rule="old-secuser-murmur-msisdn-rule" dataNode="dn$3-4"/>
+<table name="uc_route_passid_inaction_temp" rule="old-secuser-murmur-passid-rule" dataNode="dn$3-4"/>
+<table name="uc_route_username_inaction_temp" rule="old-secuser-murmur-username-rule" dataNode="dn$3-4"/>
+<table name="uc_third_account_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_total_praise" rule="sharding-by-target_id" dataNode="dn$3-4"/>
+<table name="uc_user_avatar_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_user_background_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_user_ext_inaction_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>    
+<table name="uc_user_ext_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_user_inaction_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_user_nickname_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_user_signature_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_user_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_vote_asset_count_temp_add" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_vote_asset_count_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>    
+<table name="uc_vote_asset_count_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_vote_info_temp_add" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_vote_info_temp" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+<table name="uc_vote_info_temp_update" rule="old-secuser-murmur-userid-rule" dataNode="dn$3-4"/>
+
+<table name="uc_reward" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>      
+<table name="uc_reward_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+<table name="uc_route_email_temp_add" rule="secuser-music-murmur-email-rule" dataNode="dn$7-10"/>
+<table name="uc_route_email_temp" rule="secuser-music-murmur-email-rule" dataNode="dn$7-10"/>
+<table name="uc_route_msisdn_temp_add" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$7-10"/>
+<table name="uc_route_msisdn_temp" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$7-10"/>
+<table name="uc_route_passid_temp_add" rule="secuser-music-murmur-passid-rule" dataNode="dn$7-10"/>
+<table name="uc_route_passid_temp" rule="secuser-music-murmur-passid-rule" dataNode="dn$7-10"/>
+<table name="uc_route_profileid_temp_add" rule="music-sharding-by-profile_id" dataNode="dn$7-10"/>
+<table name="uc_route_profileid_temp" rule="music-sharding-by-profile_id" dataNode="dn$7-10"/>
+<table name="uc_route_third_party_temp_add" rule="secuser-music-murmur-openid-rule" dataNode="dn$7-10"/>
+<table name="uc_route_third_party_temp" rule="secuser-music-murmur-openid-rule" dataNode="dn$7-10"/>
+<table name="uc_route_username_temp_add" rule="secuser-music-murmur-username-rule" dataNode="dn$7-10"/>
+<table name="uc_route_username_temp" rule="secuser-music-murmur-username-rule" dataNode="dn$7-10"/>
+<table name="uc_title" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+<table name="uc_title_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+</schema>
+
+  <schema name="monitor_log" checkSQLschema="false" sqlMaxLimit="100">
+<table name="uc_pinkstone_monitor_log01" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log02" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log03" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log04" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log05" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log06" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log07" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log08" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log09" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log10" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log11" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log12" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log13" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log14" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log15" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log16" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log17" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log18" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log19" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log20" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log21" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log22" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log23" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log24" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log25" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log26" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log27" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log28" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log29" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log30" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+<table name="uc_pinkstone_monitor_log31" rule="secuser-murmur-month-rule" dataNode="dn$11-34"/>
+        </schema>
+
+<schema name="music_dev" checkSQLschema="false" sqlMaxLimit="100">
+      <table name="uc_static_data"  dataNode="dn5"/>
+      <table name="uc_product"  dataNode="dn5"/>
+      <table name="uc_partner_account"  dataNode="dn5"/>
+      <table name="uc_static_code"  dataNode="dn5"/>
+      <table name="uc_msisdn_section" dataNode="dn5"/>
+      <table name="uc_reward_event_rule" dataNode="dn5"/>
+      <table name="uc_reward_level" dataNode="dn5"/>
+      <table name="uc_reward_flow" dataNode="dn5"/>
+      <table name="uc_user" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_ext" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_login_detail" dataNode="dn5"/>
+      <table name="uc_error_log" rule="secuser-music-murmur-transactionid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_busi_log" dataNode="dn5"/>
+      <table name="uc_third_account" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_avatar" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_background" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_nickname" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_signature" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_vote_info" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_get_vote_detail" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_passid" rule="secuser-music-murmur-passid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_msisdn" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_email" rule="secuser-music-murmur-email-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_third_party" rule="secuser-music-murmur-openid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_device" rule="secuser-music-murmur-deviceid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_username" rule="secuser-music-murmur-username-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_vote_asset_count" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_avatar_audit" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_background_audit" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+ 
+      <table name="uc_user_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_ext_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_msisdn_temp" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_email_temp" rule="secuser-music-murmur-email-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_passid_temp" rule="secuser-music-murmur-passid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_username_temp" rule="secuser-music-murmur-username-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_nickname_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_signature_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_avatar_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_background_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_third_account_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_third_party_temp" rule="secuser-music-murmur-openid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_profileid_temp" rule="music-sharding-by-profile_id" dataNode="dn$5-6,dn$9-10"/>
+  
+      <table name="uc_user_nickname_audit" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_signature_audit" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_login_time" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_ext_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_nickname_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_signature_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_avatar_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_background_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_userId_move" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_msisdn_inaction" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_email_inaction" rule="secuser-music-murmur-email-rule" dataNode="dn$5-6,dn$9-10"/>
+   
+      <table name="uc_user_temp_delete" dataNode="dn5"/>
+      <table name="uc_user_ext_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_msisdn_temp_add" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_third_party_temp_add" rule="secuser-music-murmur-openid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_third_account_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_email_temp_add" rule="secuser-music-murmur-email-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_passid_temp_add" rule="secuser-music-murmur-passid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_background_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_username_temp_add" rule="secuser-music-murmur-username-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_nickname_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_profileid_temp_add" rule="music-sharding-by-profile_id" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_signature_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_user_avatar_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+
+      <table name="uc_route_passid_inaction" rule="secuser-music-murmur-passid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_device_inaction" rule="secuser-music-murmur-deviceid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_route_username_inaction" rule="secuser-music-murmur-username-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_cancel_route_msisdn" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_cancel_route_email" rule="secuser-music-murmur-email-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_cancel_route_passid" rule="secuser-music-murmur-passid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_cancel_route_third_party" rule="secuser-music-murmur-openid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_cancel_route_device" rule="secuser-music-murmur-deviceid-rule" dataNode="dn$5-6,dn$9-10"/>
+      <table name="uc_cancel_route_username" rule="secuser-music-murmur-username-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_third_account_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_route_third_party_inaction" rule="secuser-music-murmur-openid-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_title" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_reward" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+       
+<table name="uc_reward_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_title_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+
+         <table name="uc_kafka_consume_log" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+    <table name="uc_login_error_userinfo" dataNode="dn5"/>
+<table name="uc_upgrade_wxaccount" dataNode="dn5"/>
+<table name="uc_black_route_msisdn" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_black_user" rule="secuser-music-murmur-blacklistid-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_black_rule" dataNode="dn5"/>
+        <table name="uc_change_detail" rule="secuser-music-murmur-userid-rule" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_praise" rule="sharding-by-praise_id" dataNode="dn$5-6,dn$9-10"/>
+        <table name="uc_nickname_used" rule="sharding-by-nick_name_encrypt" dataNode="dn$5-6,dn$9-10"/>
+<table name="uc_user_sync" dataNode="dn5"/>
+        </schema>
+		
+		
+<schema name="music_test" checkSQLschema="false" sqlMaxLimit="100">
+      <table name="uc_static_data"  dataNode="dn7"/>
+      <table name="uc_product"  dataNode="dn7"/>
+      <table name="uc_partner_account"  dataNode="dn7"/>
+      <table name="uc_static_code"  dataNode="dn7"/>
+      <table name="uc_msisdn_section" dataNode="dn7"/>
+      <table name="uc_reward_event_rule" dataNode="dn7"/>
+      <table name="uc_reward_level" dataNode="dn7"/>
+      <table name="uc_reward_flow" dataNode="dn7"/>
+      <table name="uc_user" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_ext" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_login_detail" dataNode="dn7"/>
+      <table name="uc_error_log" rule="secuser-music-murmur-transactionid-rule" dataNode="dn$7-10"/>
+      <table name="uc_busi_log" dataNode="dn7"/>
+      <table name="uc_third_account" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_avatar" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_background" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_nickname" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_signature" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_vote_info" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_get_vote_detail" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_passid" rule="secuser-music-murmur-passid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_msisdn" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_email" rule="secuser-music-murmur-email-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_third_party" rule="secuser-music-murmur-openid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_device" rule="secuser-music-murmur-deviceid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_username" rule="secuser-music-murmur-username-rule" dataNode="dn$7-10"/>
+      <table name="uc_vote_asset_count" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_avatar_audit" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_background_audit" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_nickname_audit" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_signature_audit" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_login_time" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_ext_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_nickname_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_signature_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_avatar_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_background_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_userId_move" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_msisdn_inaction" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_email_inaction" rule="secuser-music-murmur-email-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_passid_inaction" rule="secuser-music-murmur-passid-rule" dataNode="dn$7-10"/>
+<table name="uc_title" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+<table name="uc_reward" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>      
+<table name="uc_reward_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+<table name="uc_title_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+<table name="uc_route_device_inaction" rule="secuser-music-murmur-deviceid-rule" dataNode="dn$7-10"/>
+<table name="uc_user_temp_delete" dataNode="dn7"/>
+      <table name="uc_user_ext_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_msisdn_temp_add" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_third_party_temp_add" rule="secuser-music-murmur-openid-rule" dataNode="dn$7-10"/>
+      <table name="uc_third_account_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_email_temp_add" rule="secuser-music-murmur-email-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_passid_temp_add" rule="secuser-music-murmur-passid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_background_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_username_temp_add" rule="secuser-music-murmur-username-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_nickname_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_profileid_temp_add" rule="music-sharding-by-profile_id" dataNode="dn$7-10"/>
+      <table name="uc_user_signature_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_avatar_temp_add" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+    
+ <table name="uc_user_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_ext_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_msisdn_temp" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_email_temp" rule="secuser-music-murmur-email-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_passid_temp" rule="secuser-music-murmur-passid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_username_temp" rule="secuser-music-murmur-username-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_nickname_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_signature_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_avatar_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_user_background_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_third_account_temp" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_third_party_temp" rule="secuser-music-murmur-openid-rule" dataNode="dn$7-10"/>
+      <table name="uc_route_profileid_temp" rule="music-sharding-by-profile_id" dataNode="dn$7-10"/>
+
+  <table name="uc_route_username_inaction" rule="secuser-music-murmur-username-rule" dataNode="dn$7-10"/>
+      <table name="uc_cancel_route_msisdn" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$7-10"/>
+      <table name="uc_cancel_route_email" rule="secuser-music-murmur-email-rule" dataNode="dn$7-10"/>
+      <table name="uc_cancel_route_passid" rule="secuser-music-murmur-passid-rule" dataNode="dn$7-10"/>
+      <table name="uc_cancel_route_third_party" rule="secuser-music-murmur-openid-rule" dataNode="dn$7-10"/>
+      <table name="uc_cancel_route_device" rule="secuser-music-murmur-deviceid-rule" dataNode="dn$7-10"/>
+      <table name="uc_cancel_route_username" rule="secuser-music-murmur-username-rule" dataNode="dn$7-10"/>
+<table name="uc_third_account_inaction" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+<table name="uc_route_third_party_inaction" rule="secuser-music-murmur-openid-rule" dataNode="dn$7-10"/>
+                <table name="uc_kafka_consume_log" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+    <table name="uc_login_error_userinfo" dataNode="dn7"/>
+<table name="uc_upgrade_wxaccount" dataNode="dn7"/>
+<table name="uc_black_route_msisdn" rule="secuser-music-murmur-msisdn-rule" dataNode="dn$7-10"/>
+<table name="uc_black_user" rule="secuser-music-murmur-blacklistid-rule" dataNode="dn$7-10"/>
+<table name="uc_black_rule" dataNode="dn7"/>
+        <table name="uc_change_detail" rule="secuser-music-murmur-userid-rule" dataNode="dn$7-10"/>
+<table name="uc_praise" rule="sharding-by-praise_id" dataNode="dn$7-10"/>
+        <table name="uc_nickname_used" rule="sharding-by-nick_name_encrypt" dataNode="dn$7-10"/>
+<table name="uc_user_sync" dataNode="dn7"/>
+        </schema>
+		
+<schema name="migu_plus_test" checkSQLschema="false" sqlMaxLimit="100">
+      <table name="uc_static_data"  dataNode="dn9"/>
+      <table name="uc_product"  dataNode="dn9"/>
+      <table name="uc_partner_account"  dataNode="dn9"/>
+      <table name="uc_static_code"  dataNode="dn9"/>
+      <table name="uc_msisdn_section" dataNode="dn9"/>
+      <table name="uc_reward_event_rule" dataNode="dn9"/>
+      <table name="uc_reward_level" dataNode="dn9"/>
+      <table name="uc_reward_flow" dataNode="dn9"/>
+      <table name="uc_user" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_ext" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_login_detail" dataNode="dn9"/>
+      <table name="uc_error_log" rule="secuser-plus-murmur-transactionid-rule" dataNode="dn$9-10"/>
+      <table name="uc_busi_log" dataNode="dn9"/>
+      <table name="uc_third_account" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_avatar" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_background" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_nickname" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_signature" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_vote_info" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_get_vote_detail" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_passid" rule="secuser-plus-murmur-passid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_msisdn" rule="secuser-plus-murmur-msisdn-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_email" rule="secuser-plus-murmur-email-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_third_party" rule="secuser-plus-murmur-openid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_device" rule="secuser-plus-murmur-deviceid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_username" rule="secuser-plus-murmur-username-rule" dataNode="dn$9-10"/>
+      <table name="uc_vote_asset_count" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_avatar_audit" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_background_audit" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_nickname_audit" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_signature_audit" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_login_time" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_inaction" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_ext_inaction" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_nickname_inaction" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_signature_inaction" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_avatar_inaction" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_background_inaction" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_userId_move" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_msisdn_inaction" rule="secuser-plus-murmur-msisdn-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_email_inaction" rule="secuser-plus-murmur-email-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_passid_inaction" rule="secuser-plus-murmur-passid-rule" dataNode="dn$9-10"/>
+<table name="uc_title" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+<table name="uc_reward" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>      
+<table name="uc_reward_temp" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+<table name="uc_title_temp" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+<table name="uc_route_device_inaction" rule="secuser-plus-murmur-deviceid-rule" dataNode="dn$9-10"/>
+<table name="uc_user_temp_delete" dataNode="dn9"/>
+      <table name="uc_user_ext_temp_add" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_temp_add" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_msisdn_temp_add" rule="secuser-plus-murmur-msisdn-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_third_party_temp_add" rule="secuser-plus-murmur-openid-rule" dataNode="dn$9-10"/>
+      <table name="uc_third_account_temp_add" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_email_temp_add" rule="secuser-plus-murmur-email-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_passid_temp_add" rule="secuser-plus-murmur-passid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_background_temp_add" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_username_temp_add" rule="secuser-plus-murmur-username-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_nickname_temp_add" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_profileid_temp_add" rule="plus-sharding-by-profile_id" dataNode="dn$9-10"/>
+      <table name="uc_user_signature_temp_add" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_avatar_temp_add" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+    
+ <table name="uc_user_temp" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_ext_temp" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_msisdn_temp" rule="secuser-plus-murmur-msisdn-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_email_temp" rule="secuser-plus-murmur-email-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_passid_temp" rule="secuser-plus-murmur-passid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_username_temp" rule="secuser-plus-murmur-username-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_nickname_temp" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_signature_temp" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_avatar_temp" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_user_background_temp" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_third_account_temp" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_third_party_temp" rule="secuser-plus-murmur-openid-rule" dataNode="dn$9-10"/>
+      <table name="uc_route_profileid_temp" rule="plus-sharding-by-profile_id" dataNode="dn$9-10"/>
+
+  <table name="uc_route_username_inaction" rule="secuser-plus-murmur-username-rule" dataNode="dn$9-10"/>
+      <table name="uc_cancel_route_msisdn" rule="secuser-plus-murmur-msisdn-rule" dataNode="dn$9-10"/>
+      <table name="uc_cancel_route_email" rule="secuser-plus-murmur-email-rule" dataNode="dn$9-10"/>
+      <table name="uc_cancel_route_passid" rule="secuser-plus-murmur-passid-rule" dataNode="dn$9-10"/>
+      <table name="uc_cancel_route_third_party" rule="secuser-plus-murmur-openid-rule" dataNode="dn$9-10"/>
+      <table name="uc_cancel_route_device" rule="secuser-plus-murmur-deviceid-rule" dataNode="dn$9-10"/>
+      <table name="uc_cancel_route_username" rule="secuser-plus-murmur-username-rule" dataNode="dn$9-10"/>
+<table name="uc_third_account_inaction" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+<table name="uc_route_third_party_inaction" rule="secuser-plus-murmur-openid-rule" dataNode="dn$9-10"/>
+                <table name="uc_kafka_consume_log" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+    <table name="uc_login_error_userinfo" dataNode="dn9"/>
+<table name="uc_upgrade_wxaccount" dataNode="dn9"/>
+<table name="uc_black_route_msisdn" rule="secuser-plus-murmur-msisdn-rule" dataNode="dn$9-10"/>
+<table name="uc_black_user" rule="secuser-plus-murmur-blacklistid-rule" dataNode="dn$9-10"/>
+<table name="uc_black_rule" dataNode="dn9"/>
+        <table name="uc_change_detail" rule="secuser-plus-murmur-userid-rule" dataNode="dn$9-10"/>
+<table name="uc_praise" rule="sharding-by-praise_id" dataNode="dn$9-10"/>
+        <table name="uc_nickname_used" rule="sharding-by-nick_name_encrypt" dataNode="dn$9-10"/>
+<table name="uc_user_sync" dataNode="dn9"/>
+        </schema>
+
+
+
+
+
+
+
+
+  <dataNode name="dn1" dataHost="host1" database="user_dev1"/>  
+  <dataNode name="dn2" dataHost="host1" database="user_dev2"/>
+  <dataNode name="dn3" dataHost="host1" database="usr1" />
+  <dataNode name="dn4" dataHost="host1" database="usr2" />
+  <dataNode name="dn5" dataHost="host1" database="userdev_music1" />
+  <dataNode name="dn6" dataHost="host1" database="userdev_music2" />
+  <dataNode name="dn7" dataHost="host1" database="usertest_music1" />
+  <dataNode name="dn8" dataHost="host1" database="usertest_music2" />
+  <dataNode name="dn9" dataHost="host1" database="migu_plus_test1" />
+  <dataNode name="dn10" dataHost="host1" database="migu_plus_test2" />
+
+  <dataNode name="dn11" dataHost="host1" database="monitor_log_1" />
+  <dataNode name="dn12" dataHost="host1" database="monitor_log_2" />
+  <dataNode name="dn13" dataHost="host1" database="monitor_log_3" />
+  <dataNode name="dn14" dataHost="host1" database="monitor_log_4" />
+  <dataNode name="dn15" dataHost="host1" database="monitor_log_5" />
+  <dataNode name="dn16" dataHost="host1" database="monitor_log_6" />
+  <dataNode name="dn17" dataHost="host1" database="monitor_log_7" />
+  <dataNode name="dn18" dataHost="host1" database="monitor_log_8" />
+  <dataNode name="dn19" dataHost="host1" database="monitor_log_9" />
+  <dataNode name="dn20" dataHost="host1" database="monitor_log_10" />
+  <dataNode name="dn21" dataHost="host1" database="monitor_log_11" />
+  <dataNode name="dn22" dataHost="host1" database="monitor_log_12" />
+  <dataNode name="dn23" dataHost="host1" database="monitor_log_13" />
+  <dataNode name="dn24" dataHost="host1" database="monitor_log_14" />
+  <dataNode name="dn25" dataHost="host1" database="monitor_log_15" />
+  <dataNode name="dn26" dataHost="host1" database="monitor_log_16" />
+  <dataNode name="dn27" dataHost="host1" database="monitor_log_17" />
+  <dataNode name="dn28" dataHost="host1" database="monitor_log_18" />
+  <dataNode name="dn29" dataHost="host1" database="monitor_log_19" />
+  <dataNode name="dn30" dataHost="host1" database="monitor_log_20" />
+  <dataNode name="dn31" dataHost="host1" database="monitor_log_21" />
+  <dataNode name="dn32" dataHost="host1" database="monitor_log_22" />
+  <dataNode name="dn33" dataHost="host1" database="monitor_log_23" />
+  <dataNode name="dn34" dataHost="host1" database="monitor_log_24" />
+
+
+
+
+  <dataHost name="host1" maxCon="1000" minCon="10" balance="0" writeType="0" dbType="mysql" dbDriver="native" switchType="-1"> 
+    <heartbeat>select user()</heartbeat>  
+    <writeHost host="hostM1" url="10.21.20.228:4406" user="secusr" password=""></writeHost> 
+  </dataHost> 
+</mycat:schema>
+

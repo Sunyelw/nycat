@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE mycat:schema SYSTEM "schema.dtd">
+<mycat:schema xmlns:mycat="http://io.mycat/">
+
+	<schema name="db" checkSQLschema="false" sqlMaxLimit="100">
+		<table name="user" primaryKey="id" dataNode="dn1,dn2" rule="rule1" />
+		<table name="order" subTables="order$1-2" dataNode="dn1" rule="rule1" />
+		<!-- <table name="log" primaryKey="id" dataNode="dn1,dn2" rule="rule_sub" /> -->
+		<!-- <table name="uc_black_rule" primaryKey="rule_id" dataNode="dn3"/> -->
+		<table name="cat" primaryKey="id" dataNode="dn$10-12,dn$13-15,dn$16-18" rule="rule-hy-name" />
+	</schema>
+
+	<dataNode name="dn1" dataHost="localhost1" database="mycat" />
+	<dataNode name="dn2" dataHost="localhost1" database="nycat" />
+	<!-- <dataNode name="dn3" dataHost="localhost2" database="usr1" /> -->
+
+
+	<dataNode name="dn10" dataHost="localhost1" database="ddcat0" />
+	<dataNode name="dn11" dataHost="localhost1" database="ddcat1" />
+	<dataNode name="dn12" dataHost="localhost1" database="ddcat2" />
+	<dataNode name="dn13" dataHost="localhost1" database="ddcat3" />
+	<dataNode name="dn14" dataHost="localhost1" database="ddcat4" />
+	<dataNode name="dn15" dataHost="localhost1" database="ddcat5" />
+	<dataNode name="dn16" dataHost="localhost1" database="ddcat6" />
+	<dataNode name="dn17" dataHost="localhost1" database="ddcat7" />
+	<dataNode name="dn18" dataHost="localhost1" database="ddcat8" />
+	
+	<dataHost name="localhost1" maxCon="1000" minCon="10" balance="0"
+			  writeType="0" dbType="mysql" dbDriver="native" switchType="1"  slaveThreshold="100">
+		<heartbeat>select user();</heartbeat>
+		<writeHost host="server1" url="localhost:3306" user="root" password="root" />
+	</dataHost>
+
+	<!--
+	<dataHost name="localhost2" maxCon="1000" minCon="10" balance="1" 
+			  writeType="0" dbType="mysql" dbDriver="native" switchType="-1"  slaveThreshold="100">
+		<heartbeat>select user();</heartbeat>
+		<writeHost host="server2" url="10.21.20.228:4406" user="secusr" password="secusr123" />
+		<writeHost host="server1" url="localhost:3306" user="root" password="root" />
+	</dataHost>
+	-->
+
+</mycat:schema>

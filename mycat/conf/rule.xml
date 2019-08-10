@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- - - Licensed under the Apache License, Version 2.0 (the "License"); 
+	- you may not use this file except in compliance with the License. - You 
+	may obtain a copy of the License at - - http://www.apache.org/licenses/LICENSE-2.0 
+	- - Unless required by applicable law or agreed to in writing, software - 
+	distributed under the License is distributed on an "AS IS" BASIS, - WITHOUT 
+	WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. - See the 
+	License for the specific language governing permissions and - limitations 
+	under the License. -->
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+	
+	<tableRule name="rule1">
+		<rule>
+			<columns>id</columns>
+			<algorithm>modlong</algorithm>
+		</rule>
+	</tableRule>
+
+
+	<tableRule name="rule_sub">
+		<rule>
+			<columns>age</columns>
+			<algorithm>secuser_age</algorithm>
+		</rule>
+	</tableRule>
+
+	<tableRule name="rule-hy-name">
+		<rule>
+			<columns>name</columns>
+			<algorithm>sharding-by-name</algorithm>
+		</rule>
+	</tableRule>
+	<function name="sharding-by-name" class="io.mycat.route.function.HyRuleHashHandle">
+		<property name="mapFile">hy.file</property>
+		<property name="defaultNode">0</property>
+		<property name="testPro">hello world</property>
+	</function>
+	
+	<function name="secuser_age" class="io.mycat.route.function.PartitionByHashAndMonthSubString">
+        <property name="mapFile">partition_secuser_age.txt</property>
+    </function>
+
+	<function name="modlong" class="io.mycat.route.function.PartitionByMod">
+		<property name="count">2</property>
+	</function>
+	
+</mycat:rule>

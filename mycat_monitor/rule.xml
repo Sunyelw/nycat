@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- - - Licensed under the Apache License, Version 2.0 (the "License"); 
+     	- you may not use this file except in compliance with the License. - You 
+	may obtain a copy of the License at - - http://www.apache.org/licenses/LICENSE-2.0 
+	- - Unless required by applicable law or agreed to in writing, software - 
+	distributed under the License is distributed on an "AS IS" BASIS, - WITHOUT 
+	WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. - See the 
+	License for the specific language governing permissions and - limitations 
+	under the License. -->
+<!DOCTYPE mycat:rule SYSTEM "rule.dtd">
+<mycat:rule xmlns:mycat="http://io.mycat/">
+
+    <tableRule name="old-secuser-murmur-userid-rule">
+        <rule>
+            <columns>user_id</columns>
+            <algorithm>old_secuser-murmur-userid</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="old-secuser-murmur-passid-rule">
+        <rule>
+            <columns>pass_id</columns>
+            <algorithm>old_secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="old-secuser-murmur-msisdn-rule">
+        <rule>
+            <columns>msisdn</columns>
+            <algorithm>old_secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="old-secuser-murmur-email-rule">
+        <rule>
+            <columns>email</columns>
+            <algorithm>old_secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="old-secuser-murmur-openid-rule">
+        <rule>
+            <columns>openid</columns>
+            <algorithm>old_secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="old-secuser-murmur-deviceid-rule">
+        <rule>
+            <columns>device_id</columns>
+            <algorithm>old_secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="old-secuser-murmur-username-rule">
+        <rule>
+            <columns>user_name</columns>
+            <algorithm>old_secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+    <tableRule name="old-secuser-murmur-transactionid-rule">
+        <rule>
+            <columns>transactionId</columns>
+            <algorithm>old_secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+    <tableRule name="old-secuser-murmur-blacklistid-rule">
+        <rule>
+            <columns>blacklist_id</columns>
+            <algorithm>old_secuser-murmur-userid</algorithm>
+        </rule>
+    </tableRule>
+
+    <tableRule name="old-sharding-by-profile_id">
+        <rule>
+            <columns>profile_id</columns>
+            <algorithm>old_secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+    <tableRule name="secuser-murmur-userid-rule">
+        <rule>
+            <columns>user_id</columns>
+            <algorithm>secuser-murmur-userid</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-murmur-passid-rule">
+        <rule>
+            <columns>pass_id</columns>
+            <algorithm>secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-murmur-msisdn-rule">
+        <rule>
+            <columns>msisdn</columns>
+            <algorithm>secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-murmur-email-rule">
+        <rule>
+            <columns>email</columns>
+            <algorithm>secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-murmur-openid-rule">
+        <rule>
+            <columns>openid</columns>
+            <algorithm>secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-murmur-deviceid-rule">
+        <rule>
+            <columns>device_id</columns>
+            <algorithm>secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-murmur-username-rule">
+        <rule>
+            <columns>user_name</columns>
+            <algorithm>secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+    <tableRule name="secuser-murmur-transactionid-rule">
+        <rule>
+            <columns>transactionId</columns>
+            <algorithm>secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+    <tableRule name="secuser-murmur-blacklistid-rule">
+        <rule>
+            <columns>blacklist_id</columns>
+            <algorithm>secuser-murmur-userid</algorithm>
+        </rule>
+    </tableRule>
+
+    <tableRule name="sharding-by-profile_id">
+        <rule>
+            <columns>profile_id</columns>
+            <algorithm>secuser-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+
+    <tableRule name="sharding-by-target_id">
+        <rule>
+            <columns>target_id</columns>
+            <algorithm>murmur-id</algorithm>
+        </rule>
+    </tableRule>
+
+    <tableRule name="sharding-by-collection_id">
+        <rule>
+            <columns>collection_id</columns>
+            <algorithm>murmur-id</algorithm>
+        </rule>
+    </tableRule>
+
+    <tableRule name="sharding-by-comment_id">
+        <rule>
+            <columns>comment_id</columns>
+            <algorithm>murmur-id</algorithm>
+        </rule>
+    </tableRule>
+
+    <tableRule name="sharding-by-praise_id">
+        <rule>
+            <columns>praise_id</columns>
+            <algorithm>murmur-id</algorithm>
+        </rule>
+    </tableRule>
+
+    <tableRule name="sharding-by-nick_name_encrypt">
+        <rule>
+            <columns>nick_name_encrypt</columns>
+            <algorithm>murmur-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+
+
+
+
+    <tableRule name="secuser-music-murmur-userid-rule">
+        <rule>
+            <columns>user_id</columns>
+            <algorithm>secuser-music-murmur-userid</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-music-murmur-passid-rule">
+        <rule>
+            <columns>pass_id</columns>
+            <algorithm>secuser-music-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-music-murmur-msisdn-rule">
+        <rule>
+            <columns>msisdn</columns>
+            <algorithm>secuser-music-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-music-murmur-email-rule">
+        <rule>
+            <columns>email</columns>
+            <algorithm>secuser-music-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-music-murmur-openid-rule">
+        <rule>
+            <columns>openid</columns>
+            <algorithm>secuser-music-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-music-murmur-deviceid-rule">
+        <rule>
+            <columns>device_id</columns>
+            <algorithm>secuser-music-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-music-murmur-username-rule">
+        <rule>
+            <columns>user_name</columns>
+            <algorithm>secuser-music-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+    <tableRule name="secuser-music-murmur-transactionid-rule">
+        <rule>
+            <columns>transactionId</columns>
+            <algorithm>secuser-music-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+    <tableRule name="secuser-music-murmur-blacklistid-rule">
+        <rule>
+            <columns>blacklist_id</columns>
+            <algorithm>secuser-music-murmur-userid</algorithm>
+        </rule>
+    </tableRule>
+
+
+
+    <tableRule name="music-sharding-by-profile_id">
+        <rule>
+            <columns>profile_id</columns>
+            <algorithm>secuser-music-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+
+
+	<tableRule name="secuser-plus-murmur-userid-rule">
+        <rule>
+            <columns>user_id</columns>
+            <algorithm>secuser-plus-murmur-userid</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-plus-murmur-passid-rule">
+        <rule>
+            <columns>pass_id</columns>
+            <algorithm>secuser-plus-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-plus-murmur-msisdn-rule">
+        <rule>
+            <columns>msisdn</columns>
+            <algorithm>secuser-plus-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-plus-murmur-email-rule">
+        <rule>
+            <columns>email</columns>
+            <algorithm>secuser-plus-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-plus-murmur-openid-rule">
+        <rule>
+            <columns>openid</columns>
+            <algorithm>secuser-plus-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-plus-murmur-deviceid-rule">
+        <rule>
+            <columns>device_id</columns>
+            <algorithm>secuser-plus-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+    <tableRule name="secuser-plus-murmur-username-rule">
+        <rule>
+            <columns>user_name</columns>
+            <algorithm>secuser-plus-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+    <tableRule name="secuser-plus-murmur-transactionid-rule">
+        <rule>
+            <columns>transactionId</columns>
+            <algorithm>secuser-plus-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+
+    <tableRule name="secuser-plus-murmur-blacklistid-rule">
+        <rule>
+            <columns>blacklist_id</columns>
+            <algorithm>secuser-plus-murmur-userid</algorithm>
+        </rule>
+    </tableRule>
+
+
+
+    <tableRule name="plus-sharding-by-profile_id">
+        <rule>
+            <columns>profile_id</columns>
+            <algorithm>secuser-plus-murmur-route-id</algorithm>
+        </rule>
+    </tableRule>
+
+    <tableRule name="secuser-murmur-month-rule">
+        <rule>
+            <columns>month</columns>
+            <algorithm>secuser-murmur-route-month</algorithm>
+        </rule>
+    </tableRule>
+
+
+
+    <function name="secuser-murmur-route-month" class="io.mycat.route.function.PartitionByHashAndMonthSubString">
+        <property name="mapFile">partition-secuser-mod-month.txt</property>
+    </function>
+
+   	<function name="murmur-id"
+   	        class="io.mycat.route.function.PartitionByMurmurHash">
+   	        <property name="seed">0</property>
+   	        <property name="count">2</property>
+   	        <property name="virtualBucketTimes">160</property>
+   	</function>
+
+				<function name="old_secuser-murmur-userid" class="io.mycat.route.function.PartitionByRangeHashSubString">
+            <property name="mapFile">old-partition-range-mod-usr-substring-secuser.txt</property>
+        </function>
+
+         <function name="old_secuser-murmur-route-id" class="io.mycat.route.function.PartitionByRangeHashSubString">
+            <property name="mapFile">old-partition-range-mod-substring-secuser-route.txt</property>
+        </function>
+
+
+				<function name="secuser-murmur-userid" class="io.mycat.route.function.PartitionByRangeHashSubString">
+            <property name="mapFile">partition-range-mod-usr-substring-secuser.txt</property>
+        </function>
+
+        <function name="secuser-murmur-route-id" class="io.mycat.route.function.PartitionByRangeHashSubString">
+            <property name="mapFile">partition-range-mod-substring-secuser-route.txt</property>
+        </function>
+
+        <function name="secuser-music-murmur-userid" class="io.mycat.route.function.PartitionByRangeHashSubString">
+            <property name="mapFile">partition-music-secuser-011U-route.txt</property>
+        </function>
+
+         <function name="secuser-music-murmur-route-id" class="io.mycat.route.function.PartitionByRangeHashSubString">
+            <property name="mapFile">partition-music-secuser-011-route.txt</property>
+        </function>
+		<function name="secuser-plus-murmur-userid" class="io.mycat.route.function.PartitionByRangeHashSubString">
+            <property name="mapFile">partition-plus-secuser-010U-route.txt</property>
+        </function>
+
+         <function name="secuser-plus-murmur-route-id" class="io.mycat.route.function.PartitionByRangeHashSubString">
+            <property name="mapFile">partition-plus-secuser-010-route.txt</property>
+        </function>
+
+
+
+
+</mycat:rule>
+

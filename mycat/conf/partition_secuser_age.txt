@@ -1,0 +1,6 @@
+# range start-end ,data node group 
+size
+sub-length=3
+sub-list=015,011
+015=0
+011=1

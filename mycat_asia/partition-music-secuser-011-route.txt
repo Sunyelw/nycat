@@ -1,0 +1,5 @@
+# range start-end ,data node group size
+sub-length=3
+sub-list=011
+011=2
+011_mod=5000,9999
